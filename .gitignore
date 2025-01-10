@@ -1,0 +1,45 @@
+# Ignore environment files
+.env
+
+# Ignore Python cache and virtual environment folders
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environment folders
+env/
+venv/
+.venv/
+
+# Ignore results and generated files
+results/
+*.csv
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore Jupyter Notebook checkpoints (if you use Jupyter)
+.ipynb_checkpoints/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore dependencies if not using a requirements.txt or Pipfile.lock
+*.egg-info/
+*.eggs/
+build/
+dist/
+
+# Ignore temporary or backup files
+*.bak
+*.swp
+*~

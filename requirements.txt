@@ -1,0 +1,6 @@
+python-dotenv
+langchain-openai
+langchain-groq
+langchain
+pandas
+tqdm
