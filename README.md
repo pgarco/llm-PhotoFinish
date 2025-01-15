@@ -1,9 +1,9 @@
-# Llm-showdown
+# Llm-PhotoFinish
 
-This project allows you to compare the performance of different Large Language Models (LLMs) using various system prompts and user inputs. Results are stored in a CSV file for easy analysis.
+This project allows you to compare the performance of different Large Language Models (LLMs) and save results with the call and paramenters to ease reproducibility, replication and transparency in analysis.
 
 ## Table of Contents
-- [Llm-showdown](#llm-showdown)
+- [Llm-PhotoFinish](#llm-showdown)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Folder Structure](#folder-structure)
@@ -18,10 +18,6 @@ This project allows you to compare the performance of different Large Language M
     - [LLM Configuration](#llm-configuration)
     - [User Input CSV](#user-input-csv)
     - [System Prompts](#system-prompts)
-  - [Customizations](#customizations)
-    - [Adding New LLMs](#adding-new-llms)
-    - [Advanced Prompt Formatting](#advanced-prompt-formatting)
-
 ---
 
 ## Features
@@ -35,18 +31,18 @@ This project allows you to compare the performance of different Large Language M
 ## Folder Structure
 
 
-my-llm-comparison-project/
-├─ .env                 # Stores API keys and environment variables
-├─ requirements.txt     # Python dependencies
-├─ main.py              # Main script for running the comparisons
-├─ data/                # Folder containing user inputs and prompts
-│  ├─ user_input.csv    # CSV with user messages
-│  └─ prompts/          # Folder containing system prompt .txt files
-├─ configs/
-│  └─ llm_configs.json  # JSON file specifying LLM configurations
-├─ results/
-│  └─ combined_results.csv  # CSV file storing LLM responses
-└─ .gitignore           # Ignored files and folders
+llm-PhotoFinish
+├── .env                 
+├── requirements.txt     
+├── main.py              
+├── data                 
+│   ├── user_input.csv    
+│   └──prompts           
+├──  configs
+│   └──llm_configs.json
+├── results
+│   └── combined_results.csv
+└── .gitignore
 
 
 ---
@@ -54,22 +50,7 @@ my-llm-comparison-project/
 ## Setup Instructions
 
 ### 1. Create and Activate Virtual Environment
-
-1. Navigate to the project folder in your terminal.
-2. Create a virtual environment:
-   bash
-   python3 -m venv venv
-   
-3. Activate the virtual environment:
-   - *Linux/macOS*:
-     bash
-     source venv/bin/activate
      
-   - *Windows*:
-     bash
-     venv\Scripts\activate
-     
-
 ### 2. Install Dependencies
 
 Install the required Python packages:
@@ -98,7 +79,7 @@ python main.py
 
 ### View Results
 
-Results will be saved in a CSV file located in the results/ folder. By default, the file is named combined_results.csv.
+Results will be saved in a CSV file located in the results/ folder.
 
 ---
 
@@ -106,7 +87,7 @@ Results will be saved in a CSV file located in the results/ folder. By default, 
 
 ### LLM Configuration
 
-Modify the file configs/llm_configs.json to add or adjust LLM settings. Example structure:
+Modify the file configs/llm_configs.json to add or adjust LLM settings.
 
 json
 [
@@ -133,52 +114,10 @@ json
 
 ### User Input CSV
 
-Update data/user_input.csv to include the user messages. Example:
-
-
-user_message
-hi!
-Can you tell me a joke?
-Translate this sentence: "Good morning!"
-What is the capital of France?
+Update data/user_input.csv to include the user messages.
 
 
 ### System Prompts
 
-Add or modify system prompts in the data/prompts/ folder. Each .txt file should contain a system message. Example file system1.txt:
+Add or modify system prompts in the data/prompts/ folder. Each .txt file should contain a system message.
 
-
-You are a highly skilled translator. Translate the user's input into Italian.
-
-
----
-
-## Customizations
-
-### Adding New LLMs
-
-To add a new LLM:
-1. Install the required Python package.
-2. Add the configuration to configs/llm_configs.json:
-   json
-   {
-     "name": "MyNewLLM",
-     "class": "my_library.MyNewLLM",
-     "params": {
-       "model": "new-model-name"
-     }
-   }
-   
-3. Ensure the required API keys or settings are added to .env if needed.
-
-### Advanced Prompt Formatting
-
-If your use case requires structured prompts, you can customize the messages list in main.py:
-
-python
-from langchain_core.messages import HumanMessage, SystemMessage
-
-messages = [
-    SystemMessage(content="You are a helpful assistant."),
-    HumanMessage(content="Translate this to French: 'Good morning!'")
-]
