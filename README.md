@@ -29,9 +29,7 @@ This project allows you to compare the performance of different Large Language M
 ---
 
 ## Folder Structure
-
-
-llm-PhotoFinish
+```bash
 ├── .env                 
 ├── requirements.txt     
 ├── main.py              
@@ -43,7 +41,7 @@ llm-PhotoFinish
 ├── results
 │   └── combined_results.csv
 └── .gitignore
-
+```
 
 ---
 
@@ -89,7 +87,9 @@ Results will be saved in a CSV file located in the results/ folder.
 
 Modify the file configs/llm_configs.json to add or adjust LLM settings.
 
+
 json
+```bash
 [
   {
     "name": "OpenAI-GPT-4o-mini",
@@ -106,7 +106,7 @@ json
     }
   }
 ]
-
+```
 
 - name: A descriptive name for the model.
 - class: The fully qualified class name for the model.
